@@ -1,0 +1,181 @@
+header {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff; /* Warna latar belakang putih */
+  color: #000000; /* Warna teks hitam */
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk header */
+}
+
+header .kiri {
+  margin-left: 20px;
+}
+
+header .kanan {
+  margin-right: 20px;
+}
+.hidden {
+  display: none;
+}
+.container {
+  max-width: 800px;
+  margin: 90px auto;
+  padding: 20px;
+  background-color: #ffffff; /* Warna latar belakang putih */
+  border: 1px solid #000000; /* Garis tepi hitam */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #000000; /* Warna teks hitam */
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.table-container {
+  overflow-x: auto;
+}
+table,
+th,
+td {
+  border: 1px solid #000000; /* Garis tepi hitam */
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left; /* Teks rata kiri */
+}
+
+th {
+  background-color: #f2f2f2; /* Warna latar belakang abu-abu muda */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Warna latar belakang abu-abu muda untuk baris genap */
+}
+
+.link {
+  color: #2196f3; /* Warna teks biru */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #4caf50; /* Warna teks hijau saat dihover */
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-wrapper:hover .overlay {
+  opacity: 1;
+}
+
+.image-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 600px;
+    margin: 0px auto;
+  }
+  footer {
+    margin-top: 0px;
+  }
+  .hidden {
+    display: contents;
+  }
+  .pie-chart-label {
+    display: none; /* Menyembunyikan label pada tampilan smartphone */
+  }
+}
+
+/* Tampilan ponsel */
+@media (max-width: 480px) {
+  .container {
+    max-width: 90%;
+    margin: 50px auto;
+    border: 1px solid #ffffff;
+  }
+  footer {
+    margin-top: 0px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  table {
+    width: 100%;
+  }
+  th,
+  td {
+    display: block;
+  }
+  th {
+    text-align: left;
+  }
+  footer {
+    margin-top: 0px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .pie-chart-label {
+    display: none; /* Menyembunyikan label pada tampilan smartphone */
+  }
+}
+@media only screen and (max-width: 600px) {
+  header {
+    display: none; /* Menyembunyikan header pada tampilan smartphone */
+  }
+}
