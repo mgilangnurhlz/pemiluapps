@@ -137,6 +137,42 @@ const TPS = () => {
   const persenGanjar = ((totalGanjar / totalSuara) * 100).toFixed(2);
   return (
     <div className="body">
+      <div className="container5">
+        <div className="route">
+          <p>
+            <strong>Wilayah Pemilihan:</strong>
+            <Link to={`/hitungsuara/${id}/`}>
+              {" "}
+              PROV. {routeData1.nama}{" "}
+            </Link>/{" "}
+            {routeData2.kode === id2 && (
+              <span>
+                <Link to={`/hitungsuara/${id}/${id2}`}>
+                  KAB. {routeData2.nama}
+                </Link>{" "}
+                /{" "}
+              </span>
+            )}
+            {routeData3.kode === id3 && (
+              <span>
+                <Link to={`/hitungsuara/${id}/${id2}/${id3}`}>
+                  KEC. {routeData3.nama}
+                </Link>{" "}
+                /{" "}
+              </span>
+            )}
+            {routeData4.kode === id4 && (
+              <span>
+                <Link to={`/hitungsuara/${id}/${id2}/${id3}/${id4}`}>
+                  KEL. {routeData4.nama}{" "}
+                </Link>
+                /{" "}
+              </span>
+            )}
+            {routeData5.kode === id5 && <span>{routeData5.nama} </span>}
+          </p>
+        </div>
+      </div>
       <header>
         <div className="kiri">
           <p>
@@ -183,11 +219,8 @@ const TPS = () => {
           HASIL HITUNG SUARA PEMILU PRESIDEN & WAKIL PRESIDEN RI 2024
         </h1>
 
-        <p>Versi: {Ts}</p>
+        <p className="versi">Versi: {Ts}</p>
         <div className="hidden">
-          <p>
-            <strong>TPS</strong>
-          </p>
           <p>
             <strong>Anies Baswedan:</strong> {totalAnies} suara ({persenAnies}%)
           </p>
@@ -377,6 +410,28 @@ const TPS = () => {
             ))}
           </div>
         )}
+      </div>
+      <div className="container2">
+        <p>Disclaimer</p>
+        <ol>
+          <li>
+            Publikasi Form Model C/D Hasil adalah hasil penghitungan suara di
+            TPS dengan tujuan untuk memudahkan akses informasi publik.
+          </li>
+          <li>
+            Penghitungan suara yang dilakukan oleh KPPS, rekapitulasi hasil
+            penghitungan suara dan penetapan hasil pemilu dilakukan secara
+            berjenjang dalam rapat pleno terbuka oleh PPK, KPU Kabupaten/Kota,
+            KPU Provinsi dan KPU berdasarkan ketentuan peraturan
+            perundang-undangan.
+          </li>
+        </ol>
+      </div>
+      <div className="container3">
+        <p>Versi: {Ts} Progress:</p>
+      </div>
+      <div className="container4">
+        <p>Versi: {Ts}</p>
       </div>
 
       <footer>@mgilangnurhlz || Piy </footer>

@@ -116,6 +116,26 @@ const Kecamatan = () => {
   const persenGanjar = ((totalGanjar / totalSuara) * 100).toFixed(2);
   return (
     <div className="body">
+      <div className="container5">
+        <div className="route">
+          {routeData1.kode === id && (
+            <p>
+              <strong>Wilayah Pemilihan:</strong>{" "}
+              <Link to={`/hitungsuara/${id}/`}>PROV. {routeData1.nama} </Link>/
+              {routeData2.kode === id2 && (
+                <span>
+                  <Link to={`/hitungsuara/${id}/${id2}`}>
+                    {" "}
+                    KAB. {routeData2.nama}
+                  </Link>{" "}
+                  /{" "}
+                </span>
+              )}
+              {routeData3.kode === id3 && <span>KEC. {routeData3.nama}</span>}
+            </p>
+          )}
+        </div>
+      </div>
       <header>
         <div className="kiri">
           {routeData1.kode === id && (
@@ -145,14 +165,11 @@ const Kecamatan = () => {
       <div className="container">
         <h1>HASIL HITUNG SUARA PEMILU PRESIDEN & WAKIL PRESIDEN RI 2024</h1>
 
-        <p>
+        <p className="versi">
           Versi: {Ts} Progress: {Progres.progres} dari {Progres.total} TPS (
           {chartData.persen})
         </p>
         <div className="hidden">
-          <p>
-            <strong>Tingkat Kecamatan</strong>
-          </p>
           <p>
             <strong>Anies Baswedan:</strong> {totalAnies} suara ({persenAnies}%)
           </p>
@@ -237,38 +254,67 @@ const Kecamatan = () => {
           </PieChart>
         </ResponsiveContainer>
 
-        <h2>Table Data</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Wilayah</th>
-              <th>Anies Baswedan</th>
-              <th>Prabowo Subianto</th>
-              <th>Ganjar Pranowo</th>
-              <th>Progress</th>
-            </tr>
-          </thead>
-          <tbody>
-            {wilayahData.map((wilayah) => {
-              const pemiluDataItem = pemiluData[wilayah.kode];
-              return (
-                <tr key={wilayah.kode}>
-                  <td>
-                    <Link
-                      to={`/hitungsuara/${id}/${id2}/${id3}/${wilayah.kode}`}
-                    >
-                      {wilayah.nama}
-                    </Link>
-                  </td>
-                  <td>{pemiluDataItem["100025"]}</td>
-                  <td>{pemiluDataItem["100026"]}</td>
-                  <td>{pemiluDataItem["100027"]}</td>
-                  <td>{pemiluDataItem.persen || 0}%</td>{" "}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <div className="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Wilayah</th>
+                <th>Anies Baswedan</th>
+                <th>Prabowo Subianto</th>
+                <th>Ganjar Pranowo</th>
+                <th>Progress</th>
+              </tr>
+            </thead>
+            <tbody>
+              {wilayahData.map((wilayah) => {
+                const pemiluDataItem = pemiluData[wilayah.kode];
+                return (
+                  <tr key={wilayah.kode}>
+                    <td>
+                      <Link
+                        to={`/hitungsuara/${id}/${id2}/${id3}/${wilayah.kode}`}
+                      >
+                        {wilayah.nama}
+                      </Link>
+                    </td>
+                    <td>{pemiluDataItem["100025"]}</td>
+                    <td>{pemiluDataItem["100026"]}</td>
+                    <td>{pemiluDataItem["100027"]}</td>
+                    <td>{pemiluDataItem.persen || 0}%</td>{" "}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div className="container2">
+        <p>Disclaimer</p>
+        <ol>
+          <li>
+            Publikasi Form Model C/D Hasil adalah hasil penghitungan suara di
+            TPS dengan tujuan untuk memudahkan akses informasi publik.
+          </li>
+          <li>
+            Penghitungan suara yang dilakukan oleh KPPS, rekapitulasi hasil
+            penghitungan suara dan penetapan hasil pemilu dilakukan secara
+            berjenjang dalam rapat pleno terbuka oleh PPK, KPU Kabupaten/Kota,
+            KPU Provinsi dan KPU berdasarkan ketentuan peraturan
+            perundang-undangan.
+          </li>
+        </ol>
+      </div>
+      <div className="container3">
+        <p>
+          Versi: {Ts} Progress: {Progres.progres} dari {Progres.total} TPS (
+          {chartData.persen}%)
+        </p>
+      </div>
+      <div className="container4">
+        <p>
+          Versi: {Ts} Progress: {Progres.progres} dari {Progres.total} TPS (
+          {chartData.persen}%)
+        </p>
       </div>
       <footer>@mgilangnurhlz || Piy </footer>
     </div>

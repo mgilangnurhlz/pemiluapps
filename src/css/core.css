@@ -1,3 +1,6 @@
+.body {
+  padding-top: 20px;
+}
 header {
   display: flex;
   position: fixed;
@@ -23,16 +26,85 @@ header .kanan {
 }
 .container {
   max-width: 800px;
-  margin: 90px auto;
+  margin: 90px auto 20px auto;
   padding: 20px;
   background-color: #ffffff; /* Warna latar belakang putih */
   border: 1px solid #000000; /* Garis tepi hitam */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.container2 {
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #ffffff; /* Warna latar belakang putih */
+  border: 1px solid #000000; /* Garis tepi hitam */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.container2 p {
+  font-size: 20px;
+  font-weight: 300;
+}
+.container2 ol li {
+  text-align: justify;
+}
+.container3 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-color: #5d5d5d;
+  color: #fff;
+  padding: 0 2px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.container3 p {
+  font-size: small;
+}
+.container4 {
+  display: none;
+}
+.container5 {
+  display: none;
 
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #ffffff; /* Warna latar belakang putih */
+  border: 1px solid #000000; /* Garis tepi hitam */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #cfe1fe;
+}
+.route {
+  max-width: 800px;
+  background-color: #cfe1fe;
+
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Aktifkan scroll horizontal jika konten melebihi lebar div */
+  white-space: nowrap;
+  padding: 10px; /* Menambahkan padding pada sisi kiri dan kanan div */
+}
+
+.route p {
+  margin: 0;
+}
+.versi {
+  text-align: center;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: #5d5d5d;
+  color: #fff;
+}
 h1 {
-  font-size: 24px;
+  font-size: 23px;
   margin-bottom: 20px;
   text-align: center;
   color: #000000; /* Warna teks hitam */
@@ -50,6 +122,7 @@ table {
 .table-container {
   overflow-x: auto;
 }
+
 table,
 th,
 td {
@@ -63,7 +136,8 @@ td {
 }
 
 th {
-  background-color: #f2f2f2; /* Warna latar belakang abu-abu muda */
+  background-color: #4d4d4d;
+  color: #f9f9f9; /* Warna latar belakang abu-abu muda */
 }
 
 tr:nth-child(even) {
@@ -127,8 +201,17 @@ footer {
   text-align: center;
   margin-top: 20px;
 }
+
 @media (max-width: 768px) {
   .container {
+    max-width: 600px;
+    margin: 0px auto;
+  }
+  .container2 {
+    max-width: 600px;
+    margin: 0px auto;
+  }
+  .container5 {
     max-width: 600px;
     margin: 0px auto;
   }
@@ -147,7 +230,17 @@ footer {
 @media (max-width: 480px) {
   .container {
     max-width: 90%;
-    margin: 50px auto;
+    margin: 30px auto;
+    border: 1px solid #ffffff;
+  }
+  .container2 {
+    max-width: 90%;
+    margin: 30px auto;
+    border: 1px solid #ffffff;
+  }
+  .container5 {
+    max-width: 90%;
+    margin: 30px auto;
     border: 1px solid #ffffff;
   }
   footer {
@@ -155,27 +248,61 @@ footer {
   }
 }
 @media only screen and (max-width: 600px) {
+  .container {
+    max-width: 90%;
+    margin: 10px auto;
+    border: 1px solid #ffffff;
+  }
+  .container2 {
+    max-width: 90%;
+    margin: 10px auto;
+    border: 1px solid #000000;
+  }
+  .container5 {
+    display: contents;
+    max-width: 90%;
+    margin: 10px auto;
+    border: 1px solid white;
+  }
+
   table {
     width: 100%;
   }
-  th,
-  td {
-    display: block;
-  }
+
   th {
     text-align: left;
   }
   footer {
     margin-top: 0px;
   }
-}
-@media only screen and (max-width: 600px) {
   .pie-chart-label {
     display: none; /* Menyembunyikan label pada tampilan smartphone */
   }
-}
-@media only screen and (max-width: 600px) {
+  .lihat {
+    display: none;
+  }
   header {
     display: none; /* Menyembunyikan header pada tampilan smartphone */
+  }
+  .container3 {
+    display: none;
+  }
+  .container4 {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #5d5d5d;
+    color: #fff;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;
+    width: 80%;
+  }
+  .container4 p {
+    font-size: small;
   }
 }

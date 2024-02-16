@@ -85,6 +85,15 @@ const Provinsi = () => {
   const persenGanjar = ((totalGanjar / totalSuara) * 100).toFixed(2);
   return (
     <div className="body">
+      <div className="container5">
+        <div className="route">
+          {routeData.kode === id && (
+            <p>
+              <strong>Wilayah Pemilihan</strong> PROV. {routeData.nama}
+            </p>
+          )}
+        </div>
+      </div>
       <header>
         <div className="kiri">
           {routeData.kode === id && (
@@ -103,14 +112,11 @@ const Provinsi = () => {
       <div className="container">
         <h1>HASIL HITUNG SUARA PEMILU PRESIDEN & WAKIL PRESIDEN RI 2024</h1>
 
-        <p>
+        <p className="versi">
           Versi: {ts} Progress: {progres.progres} dari {progres.total} TPS (
           {chartData.persen}%)
         </p>
         <div className="hidden">
-          <p>
-            <strong>Tingkat Provinsi</strong>
-          </p>
           <p>
             <strong>Anies Baswedan:</strong> {totalAnies} suara ({persenAnies}%)
           </p>
@@ -195,38 +201,71 @@ const Provinsi = () => {
             <Tooltip formatter={(value, name) => [`${value}`, name]} />
           </PieChart>
         </ResponsiveContainer>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Wilayah</th>
-              <th>Anies Baswedan</th>
-              <th>Prabowo Subianto</th>
-              <th>Ganjar Pranowo</th>
-              <th>Progress</th>
-            </tr>
-          </thead>
-          <tbody>
-            {wilayahData.map((wilayah) => {
-              const pemiluDataItem = pemiluData[wilayah.kode];
-              return (
-                <tr key={wilayah.kode}>
-                  <td>
-                    <Link to={`/hitungsuara/${id}/${wilayah.kode}`}>
-                      {" "}
-                      {wilayah.nama}
-                    </Link>
-                  </td>
-                  <td>{pemiluDataItem["100025"]}</td>
-                  <td>{pemiluDataItem["100026"]}</td>
-                  <td>{pemiluDataItem["100027"]}</td>
-                  <td>{pemiluDataItem.persen || 0}%</td>{" "}
-                  {/* Handling untuk nilai yang mungkin tidak terdefinisi */}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <div className="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Wilayah</th>
+                <th>Anies Baswedan</th>
+                <th>Prabowo Subianto</th>
+                <th>Ganjar Pranowo</th>
+                <th>Progress</th>
+              </tr>
+            </thead>
+            <tbody>
+              {wilayahData.map((wilayah) => {
+                const pemiluDataItem = pemiluData[wilayah.kode];
+                return (
+                  <tr key={wilayah.kode}>
+                    <td>
+                      <Link to={`/hitungsuara/${id}/${wilayah.kode}`}>
+                        {" "}
+                        {wilayah.nama}
+                      </Link>
+                    </td>
+                    <td>{pemiluDataItem["100025"]}</td>
+                    <td>{pemiluDataItem["100026"]}</td>
+                    <td>{pemiluDataItem["100027"]}</td>
+                    <td>{pemiluDataItem.persen || 0}%</td>{" "}
+                    {/* Handling untuk nilai yang mungkin tidak terdefinisi */}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div className="container2">
+        <p>Disclaimer</p>
+        <ol>
+          <li>
+            Publikasi Form Model C/D Hasil adalah hasil penghitungan suara di
+            TPS dengan tujuan untuk memudahkan akses informasi publik.
+          </li>
+          <li>
+            Penghitungan suara yang dilakukan oleh KPPS, rekapitulasi hasil
+            penghitungan suara dan penetapan hasil pemilu dilakukan secara
+            berjenjang dalam rapat pleno terbuka oleh PPK, KPU Kabupaten/Kota,
+            KPU Provinsi dan KPU berdasarkan ketentuan peraturan
+            perundang-undangan.
+          </li>
+        </ol>
+      </div>
+      <div className="container3">
+        <p>
+          <p>
+            Versi: {ts} Progress: {progres.progres} dari {progres.total} TPS (
+            {chartData.persen}%)
+          </p>
+        </p>
+      </div>
+      <div className="container4">
+        <p>
+          <p>
+            Versi: {ts} Progress: {progres.progres} dari {progres.total} TPS (
+            {chartData.persen}%)
+          </p>
+        </p>
       </div>
       <footer>@mgilangnurhlz || Piy </footer>
     </div>

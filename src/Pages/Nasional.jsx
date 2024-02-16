@@ -76,10 +76,18 @@ const Nasional = () => {
   const persenGanjar = ((totalGanjar / totalSuara) * 100).toFixed(2);
   return (
     <div className="body">
+      <div className="container5">
+        <div className="route">
+          <p>
+            <strong>TINGKAT NASIONAL</strong>
+          </p>
+        </div>
+      </div>
+
       <header>
         <div className="kiri">
           <p>
-            <strong>Wilayah Pemilihan </strong>NASIONAL
+            <strong>TINGKAT NASIONAL </strong>
           </p>
         </div>
 
@@ -87,14 +95,11 @@ const Nasional = () => {
       </header>
       <div className="container">
         <h1>HASIL HITUNG SUARA PEMILU PRESIDEN & WAKIL PRESIDEN RI 2024</h1>
-        <p>
+        <p className="versi">
           Versi: {Ts} Progress: {Progres.progres} dari {Progres.total} TPS (
           {chartData.persen}%)
         </p>
         <div className="hidden">
-          <p>
-            <strong>Tingkat Nasional</strong>
-          </p>
           <p>
             <strong>Anies Baswedan:</strong> {totalAnies} suara ({persenAnies}%)
           </p>
@@ -212,6 +217,36 @@ const Nasional = () => {
           </table>
         </div>
       </div>
+      <div className="container2">
+        <p>Disclaimer</p>
+        <ol>
+          <li>
+            Publikasi Form Model C/D Hasil adalah hasil penghitungan suara di
+            TPS dengan tujuan untuk memudahkan akses informasi publik.
+          </li>
+          <li>
+            Penghitungan suara yang dilakukan oleh KPPS, rekapitulasi hasil
+            penghitungan suara dan penetapan hasil pemilu dilakukan secara
+            berjenjang dalam rapat pleno terbuka oleh PPK, KPU Kabupaten/Kota,
+            KPU Provinsi dan KPU berdasarkan ketentuan peraturan
+            perundang-undangan.
+          </li>
+        </ol>
+      </div>
+
+      <div className="container3">
+        <p>
+          Versi: {Ts} Progress: {Progres.progres} dari {Progres.total} TPS (
+          {chartData.persen}%)
+        </p>
+      </div>
+      <div className="container4">
+        <p>
+          Versi: {Ts} Progress: {Progres.progres} dari {Progres.total} TPS (
+          {chartData.persen}%)
+        </p>
+      </div>
+
       <footer>@mgilangnurhlz || Piy</footer>
     </div>
   );
