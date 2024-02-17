@@ -428,7 +428,7 @@ const TPS = () => {
         </ol>
       </div>
       <div className="container3">
-        <p>Versi: {Ts} Progress:</p>
+        <p>Versi: {Ts}</p>
       </div>
       <div className="container4">
         <p>Versi: {Ts}</p>
