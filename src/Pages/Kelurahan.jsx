@@ -132,29 +132,28 @@ const Kelurahan = () => {
     <div className="body">
       <div className="container5">
         <div className="route">
-          {routeData1.kode === id && (
-            <p>
-              <strong>Wilayah Pemilihan:</strong>{" "}
-              <Link to={`/hitungsuara/${id}/`}>PROV. {routeData1.nama} </Link>/{" "}
-              {routeData2.kode === id2 && (
-                <span>
-                  <Link to={`/hitungsuara/${id}/${id2}`}>
-                    KAB. {routeData2.nama}
-                  </Link>{" "}
-                  /{" "}
-                </span>
-              )}
-              {routeData3.kode === id3 && (
-                <span>
-                  <Link to={`/hitungsuara/${id}/${id2}/${id2}/${id3}`}>
-                    Kec. {routeData3.nama}{" "}
-                  </Link>
-                  /{" "}
-                </span>
-              )}
-              {routeData4.kode === id4 && <span>Kel. {routeData4.nama} </span>}
-            </p>
-          )}
+          <p>
+            <Link to={`/`}>IDN</Link> &#8594;
+            <Link to={`/hitungsuara/${id}/`}>
+              {" "}
+              {routeData1.nama}{" "}
+            </Link> &#8594;{" "}
+            {routeData2.kode === id2 && (
+              <span>
+                <Link to={`/hitungsuara/${id}/${id2}`}> {routeData2.nama}</Link>{" "}
+                &#8594;{" "}
+              </span>
+            )}
+            {routeData3.kode === id3 && (
+              <span>
+                <Link to={`/hitungsuara/${id}/${id2}/${id3}`}>
+                  {routeData3.nama}
+                </Link>{" "}
+                &#8594;{" "}
+              </span>
+            )}
+            {routeData4.kode === id4 && <span>{routeData4.nama} </span>}
+          </p>
         </div>
       </div>
       <header>
@@ -173,13 +172,13 @@ const Kelurahan = () => {
               )}
               {routeData3.kode === id3 && (
                 <span>
-                  <Link to={`/hitungsuara/${id}/${id2}/${id2}/${id3}`}>
-                    Kec. {routeData3.nama}{" "}
+                  <Link to={`/hitungsuara/${id}/${id2}/${id3}`}>
+                    KEC. {routeData3.nama}{" "}
                   </Link>
                   /{" "}
                 </span>
               )}
-              {routeData4.kode === id4 && <span>Kel. {routeData4.nama} </span>}
+              {routeData4.kode === id4 && <span>KEL. {routeData4.nama} </span>}
             </p>
           )}
         </div>

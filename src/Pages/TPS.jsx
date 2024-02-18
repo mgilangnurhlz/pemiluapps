@@ -140,36 +140,34 @@ const TPS = () => {
       <div className="container5">
         <div className="route">
           <p>
-            <strong>Wilayah Pemilihan:</strong>
+            <Link to={`/`}>IDN</Link> &#8594;
             <Link to={`/hitungsuara/${id}/`}>
               {" "}
-              PROV. {routeData1.nama}{" "}
-            </Link>/{" "}
+              {routeData1.nama}{" "}
+            </Link>&#8594;{" "}
             {routeData2.kode === id2 && (
               <span>
-                <Link to={`/hitungsuara/${id}/${id2}`}>
-                  KAB. {routeData2.nama}
-                </Link>{" "}
-                /{" "}
+                <Link to={`/hitungsuara/${id}/${id2}`}>{routeData2.nama}</Link>{" "}
+                &#8594;{" "}
               </span>
             )}
             {routeData3.kode === id3 && (
               <span>
                 <Link to={`/hitungsuara/${id}/${id2}/${id3}`}>
-                  KEC. {routeData3.nama}
+                  {routeData3.nama}
                 </Link>{" "}
-                /{" "}
+                &#8594;{" "}
               </span>
             )}
             {routeData4.kode === id4 && (
               <span>
                 <Link to={`/hitungsuara/${id}/${id2}/${id3}/${id4}`}>
-                  KEL. {routeData4.nama}{" "}
+                  {routeData4.nama}{" "}
                 </Link>
-                /{" "}
+                &#8594;{" "}
               </span>
             )}
-            {routeData5.kode === id5 && <span>{routeData5.nama} </span>}
+            {routeData5.kode === id5 && <span> {routeData5.nama} </span>}
           </p>
         </div>
       </div>

@@ -120,18 +120,19 @@ const Kecamatan = () => {
         <div className="route">
           {routeData1.kode === id && (
             <p>
-              <strong>Wilayah Pemilihan:</strong>{" "}
-              <Link to={`/hitungsuara/${id}/`}>PROV. {routeData1.nama} </Link>/
+              <Link to={`/`}>IDN</Link> &#8594;
+              <Link to={`/hitungsuara/${id}/`}> {routeData1.nama} </Link>{" "}
+              &#8594;
               {routeData2.kode === id2 && (
                 <span>
                   <Link to={`/hitungsuara/${id}/${id2}`}>
                     {" "}
-                    KAB. {routeData2.nama}
+                    {routeData2.nama}
                   </Link>{" "}
-                  /{" "}
+                  &#8594;{" "}
                 </span>
               )}
-              {routeData3.kode === id3 && <span>KEC. {routeData3.nama}</span>}
+              {routeData3.kode === id3 && <span>{routeData3.nama}</span>}
             </p>
           )}
         </div>

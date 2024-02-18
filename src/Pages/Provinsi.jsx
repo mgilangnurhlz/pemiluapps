@@ -89,7 +89,7 @@ const Provinsi = () => {
         <div className="route">
           {routeData.kode === id && (
             <p>
-              <strong>Wilayah Pemilihan</strong> PROV. {routeData.nama}
+              <Link to={`/`}>IDN</Link> &#8594; {routeData.nama}
             </p>
           )}
         </div>
@@ -98,7 +98,7 @@ const Provinsi = () => {
         <div className="kiri">
           {routeData.kode === id && (
             <p>
-              <strong>Wilayah Pemilihan</strong> PROV. {routeData.nama}
+              <strong>Wilayah Pemilihan:</strong> PROV. {routeData.nama}
             </p>
           )}
         </div>

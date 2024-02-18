@@ -101,9 +101,10 @@ const Kabupaten = () => {
         <div className="route">
           {routeData1.kode === id && (
             <p>
-              <strong>Wilayah Pemilihan</strong>{" "}
-              <Link to={`/hitungsuara/${id}/`}>PROV. {routeData1.nama} </Link> /
-              {routeData2.kode === id2 && <span> KAB. {routeData2.nama}</span>}
+              <Link to={`/`}>IDN</Link> &#8594;
+              <Link to={`/hitungsuara/${id}/`}> {routeData1.nama} </Link>{" "}
+              &#8594;
+              {routeData2.kode === id2 && <span> {routeData2.nama}</span>}
             </p>
           )}
         </div>
@@ -112,7 +113,7 @@ const Kabupaten = () => {
         <div className="kiri">
           {routeData1.kode === id && (
             <p>
-              <strong>Wilayah Pemilihan</strong>{" "}
+              <strong>Wilayah Pemilihan:</strong>{" "}
               <Link to={`/hitungsuara/${id}/`}>PROV. {routeData1.nama} </Link> /
               {routeData2.kode === id2 && <span> KAB. {routeData2.nama}</span>}
             </p>

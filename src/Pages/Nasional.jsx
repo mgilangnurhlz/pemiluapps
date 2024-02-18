@@ -79,7 +79,9 @@ const Nasional = () => {
       <div className="container5">
         <div className="route">
           <p>
-            <strong>TINGKAT NASIONAL</strong>
+            <Link to={`/`}>
+              <p>IDN</p>
+            </Link>
           </p>
         </div>
       </div>
